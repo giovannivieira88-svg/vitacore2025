@@ -12,8 +12,8 @@ export default async function handler(req, res) {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: ${process.env.NEXT_PUBLIC_SITE_URL}/sucesso?session_id={CHECKOUT_SESSION_ID},
-      cancel_url: ${process.env.NEXT_PUBLIC_SITE_URL}/cancelado,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/sucesso?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/cancelado`,
     });
 
     return res.status(200).json({ url: session.url });
