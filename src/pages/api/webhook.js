@@ -20,8 +20,7 @@ export default async function handler(req, res) {
     }
 
     res.json({ received: true });
-  } catch (err) {
-    console.error("Erro no webhook:", err);
-    res.status(400).send(`Erro no webhook: ${err.message}`);
-  }
+} catch (err) {
+  console.error("Erro no webhook:", err);
+  return res.status(400).send(`Erro no webhook: ${err.message}`);
 }
