@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       console.log("Pagamento recebido:", session.id);
-      // Aqui depois a gente vai colocar o código para gravar no Supabase
+      // Aqui depois a gente grava no Supabase: user, plano, data, etc.
     }
 
     res.json({ received: true });
